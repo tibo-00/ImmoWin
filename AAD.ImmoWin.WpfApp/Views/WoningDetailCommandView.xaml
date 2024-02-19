@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="AAD.ImmoWin.WpfApp.Views.WoningDetailCommandView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AAD.ImmoWin.WpfApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             IsEnabled="{Binding IsEnabled}">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type local:KlantDetailView}">
+            <local:HuisDetailView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:AppartementDetailView}">
+            <local:AppartementDetailView />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="{Binding Title}" Style="{StaticResource TitelLabel}"></Label>
+        <Border BorderBrush="Gray" Grid.Row="1">
+            <ContentControl Content="{Binding WoningDetailView}" ></ContentControl>
+        </Border>
+        <UniformGrid Columns="4" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
+            <Button Content="Bewaren" Command="{Binding WoningWijzigingBewarenCommand}" Margin="10"></Button>
+            <Button Content="Annuleren" Command="{Binding WoningWijzigingAnnulerenCommand}" Margin="10"></Button>
+        </UniformGrid>
+    </Grid>
+</UserControl>

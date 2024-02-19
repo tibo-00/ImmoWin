@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="AAD.ImmoWin.WpfApp.Views.VastgoedLijstView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AAD.ImmoWin.WpfApp.Views" xmlns:converters="clr-namespace:AAD.ImmoWin.WpfApp.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             IsEnabled="{Binding IsEnabled}">
+    <UserControl.Resources>
+        <converters:ComboBoxItemToIntegerConverter x:Key="ComboBoxItemToIntegerConverter" />
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True">
+        <Label Content="{Binding Title}" Style="{StaticResource TitelLabel}" DockPanel.Dock="Top"></Label>
+        <UniformGrid Columns="4" DockPanel.Dock="Bottom">
+            <Button Content="Wijzigen" Command="{Binding VastgoedWijzigenCommand}" Margin="3"></Button>
+            <Button Content="Verwijderen" Command="{Binding VastgoedVerwijderenCommand}" Margin="3"></Button>
+            <Button Content="Huis Toevoegen" Command="{Binding HuisToevoegenCommand}" Margin="3"></Button>
+            <Button Content="Appartement Toevoegen" Command="{Binding AppartementToevoegenCommand}" Margin="3"></Button>
+        </UniformGrid>
+        <StackPanel DockPanel.Dock="Top" Orientation="Vertical" Margin="5">
+            <ComboBox SelectedItem="{Binding SelectedVastgoedType, Converter={StaticResource ComboBoxItemToIntegerConverter}}" Margin="3">
+                <ComboBoxItem Content="Kies een woningstype..." Tag="0" IsSelected="True"/>
+                <ComboBoxItem Content="Huizen" Tag="1"/>
+                <ComboBoxItem Content="Appartementen" Tag="2"/>
+            </ComboBox>
+        </StackPanel>
+        <Grid DockPanel.Dock="Top" Margin="5" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Filter op eigenaar: " HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="3" ></Label>
+            <ComboBox IsEditable="True" IsReadOnly="True" Text="Filter op eigenaar..." ItemsSource="{Binding KlantenLijst}" SelectedItem="{Binding SelectedEigenaar}" ItemStringFormat="{}{0:VF}" Margin="3" Grid.Column="1"/>
+            <Button Content="Reset" Command="{Binding EigenaarResetCommand}" Margin="3" Grid.Column="2"></Button>
+        </Grid>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Sorteren op: " HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="3" Grid.Column="0"></Label>
+            <Button Content=" Adres " Command="{Binding SortAdresCommand}" Margin="3,3,3,3" Grid.Column="1"></Button>
+            <Button Content=" Waarde " Command="{Binding SortWaardeCommand}" Margin="3" Grid.Column="2"></Button>
+            <Button Content=" Bouwdatum " Command="{Binding SortBouwdatumCommand}" Margin="3" Grid.Column="3"></Button>
+        </Grid>
+        <ListBox ItemsSource="{Binding Woningen}" SelectedItem="{Binding GeselecteerdeWoning}"></ListBox>
+    </DockPanel>
+</UserControl>

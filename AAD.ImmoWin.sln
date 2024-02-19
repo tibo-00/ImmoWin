@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAD.ImmoWin.ConsoleApp", "AAD.ImmoWin.ConsoleApp\AAD.ImmoWin.ConsoleApp.csproj", "{7B41FDBC-F4D7-4221-B95C-03A068D9FCAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAD.ImmoWin.Business", "AAD.ImmoWin.Business\AAD.ImmoWin.Business.csproj", "{FDB06E42-2619-46C9-85BA-29A7E490D5AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E14EC395-BA8C-4A75-8FBE-F8A317191931} = {E14EC395-BA8C-4A75-8FBE-F8A317191931}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odisee.Common", "Odisee.Common\Odisee.Common.csproj", "{BA1B3333-2001-4812-845D-1A6A4B65EEEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAD.ImmoWin.WpfApp", "AAD.ImmoWin.WpfApp\AAD.ImmoWin.WpfApp.csproj", "{4524CE6A-568C-4923-B55C-F7420463EC87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAD.ImmoWin.Data", "AAD.ImmoWin.Data\AAD.ImmoWin.Data.csproj", "{E14EC395-BA8C-4A75-8FBE-F8A317191931}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B41FDBC-F4D7-4221-B95C-03A068D9FCAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B41FDBC-F4D7-4221-B95C-03A068D9FCAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B41FDBC-F4D7-4221-B95C-03A068D9FCAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B41FDBC-F4D7-4221-B95C-03A068D9FCAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB06E42-2619-46C9-85BA-29A7E490D5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB06E42-2619-46C9-85BA-29A7E490D5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB06E42-2619-46C9-85BA-29A7E490D5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB06E42-2619-46C9-85BA-29A7E490D5AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1B3333-2001-4812-845D-1A6A4B65EEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1B3333-2001-4812-845D-1A6A4B65EEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1B3333-2001-4812-845D-1A6A4B65EEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1B3333-2001-4812-845D-1A6A4B65EEEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4524CE6A-568C-4923-B55C-F7420463EC87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4524CE6A-568C-4923-B55C-F7420463EC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4524CE6A-568C-4923-B55C-F7420463EC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4524CE6A-568C-4923-B55C-F7420463EC87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E14EC395-BA8C-4A75-8FBE-F8A317191931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14EC395-BA8C-4A75-8FBE-F8A317191931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14EC395-BA8C-4A75-8FBE-F8A317191931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14EC395-BA8C-4A75-8FBE-F8A317191931}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDFCAA31-79E1-4E1B-95F6-C39565564A92}
+	EndGlobalSection
+EndGlobal

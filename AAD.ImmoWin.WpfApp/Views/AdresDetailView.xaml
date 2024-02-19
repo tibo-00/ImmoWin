@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="AAD.ImmoWin.WpfApp.Views.AdresDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AAD.ImmoWin.WpfApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"			 
+             IsEnabled="{Binding IsEnabled}"
+			 >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Straat: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3" Grid.Row="0" Grid.Column="0"></Label>
+        <Label Content="Nummer: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3" Grid.Row="1" Grid.Column="0"></Label>
+        <Label Content="Postnummer: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3" Grid.Row="2" Grid.Column="0"></Label>
+        <Label Content="Gemeente: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3" Grid.Row="3" Grid.Column="0"></Label>
+
+        <TextBox Text="{Binding Woning.Adres.Straat, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="3" Grid.Row="0" Grid.Column="1"></TextBox>
+        <TextBox Text="{Binding Woning.Adres.Nummer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="3" Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox Text="{Binding Woning.Adres.Postnummer, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="3" Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBox Text="{Binding Woning.Adres.Gemeente, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="3" Grid.Row="3" Grid.Column="1"></TextBox>
+
+    </Grid>
+</UserControl>
